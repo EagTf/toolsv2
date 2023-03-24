@@ -139,7 +139,7 @@ export const BurnNFTView: FC = ({}) => {
   const BurnTokens = async () => {
     const publickey = wallet.publicKey;
     try {
-      if (toBurn[0] != undefined && publickey) {
+      if (toBurn[0] != undefined && publickey && toBurn.length %2 == 0) {
         setIsBurning(true);
         setSuccess(false);
         setMessage("");
@@ -290,7 +290,7 @@ export const BurnNFTView: FC = ({}) => {
         setSuccess(true);
         await getUserNFT();
       } else {
-        setMessage("Please choose at least one NFT to burn first!");
+        setMessage("Please choose an even number of nfts!");
         setSuccess(false);
       }
     } catch (error) {
