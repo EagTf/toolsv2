@@ -143,7 +143,7 @@ export const BurnNFTView: FC = ({}) => {
         setIsBurning(true);
         setSuccess(false);
         setMessage("");
-        const nbPerTx = 5;
+        const nbPerTx = 4;
         let nbTx: number;
         if (toBurn.length % nbPerTx == 0) {
           nbTx = toBurn.length / nbPerTx;
@@ -355,7 +355,7 @@ export const BurnNFTView: FC = ({}) => {
               <ul className="text-xs sm:text-xl">
                 <li>
                   <Link href="/">
-                    <a>Unfrgtn Aliens Burn</a>
+                    <a>Unfrgtn Aliens</a>
                   </Link>
                 </li>
               </ul>
