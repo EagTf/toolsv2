@@ -10,7 +10,7 @@ const Footer = () => {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://twitter.com/ToolsSolana"
+            href="https://twitter.com/UnfrgtnOrbit"
             type="button"
             className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-50 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
           >
@@ -81,7 +81,7 @@ const Footer = () => {
       </div>
 
       <div className="text-center text-white pb-2">
-        Try on
+        Go to
         <a
           target="_blank"
           rel="noreferrer"
