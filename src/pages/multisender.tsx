@@ -7,8 +7,8 @@ const Home: NextPage = (props) => {
   return (
     <div className=" flex flex-col h-screen justify-between">
       <Head>
-        <title>SOLANA TOOLS</title>
-        <meta name="description" content="Solana tools to help you in the solana ecosystem" />
+        <title>Unfrgtn Aliens</title>
+        <meta name="description" content="Unfrgtn Aliens Tools" />
       </Head>
       <MultiSenderView />
       <Footer/>

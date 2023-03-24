@@ -8,7 +8,7 @@ const Home: NextPage = (props) => {
     <div className=" flex flex-col h-screen justify-between">
       <Head>
         <title>Unfrgtn Aliens</title>
-        <meta name="description" content="Unfrgtn Aliens Burn Event" />
+        <meta name="description" content="Unfrgtn Aliens Tools" />
       </Head>
       <BurnNFTView />
       <Footer/>
