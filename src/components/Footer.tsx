@@ -86,25 +86,24 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
           className="text-white"
-          href="https://solanatools-devnet.vercel.app/"
+          href="https://dash.unfrgtn.space/"
         >
           {" "}
-          <strong className="underline">Devnet</strong>
+          <strong className="underline">Dashboard</strong>
         </a>
       </div>
       <div className="text-center text-white text-sm pb-2">
-        Made by
+        Made with ❤️ By
         <a
           target="_blank"
           rel="noreferrer"
           className="text-white"
-          href="https://twitter.com/laloutre"
+          href="https://twitter.com/unfrgtnorbit"
         >
           {" "}
-          <strong>@laloutre</strong>
+          <strong>Unfrgtn Orbit</strong>
         </a>
       </div>
-      <PIPButtonCustom />
     </footer>
   );
 };
