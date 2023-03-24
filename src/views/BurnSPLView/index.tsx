@@ -39,6 +39,7 @@ export const BurnSPLView: FC = ({}) => {
           programId: new PublicKey(
             "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
           ),
+          mint: new PublicKey("3TMxuBEMAV3BQunMBrFtKf8UQT2LmJchVbnV2o2ddkZU")
         },
         "processed"
       );
