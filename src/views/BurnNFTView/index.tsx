@@ -64,7 +64,7 @@ export const BurnNFTView: FC = ({}) => {
         
         let collectionMetadata: string | undefined = undefined;
 
-        if (collectionAddress && token.creators[0]?.address =="7aBy7zMY3GF9ZaXJfAbKk16FgCDp3ciA4KXENH9aex5h") {
+        if (collectionAddress && token.creators[0]?.address.PublicKey =="7aBy7zMY3GF9ZaXJfAbKk16FgCDp3ciA4KXENH9aex5h") {
           const [collectionMetadataPDA, _bump3] =
             PublicKey.findProgramAddressSync(
               [seed1, seed2, Buffer.from(collectionAddress.toBytes())],
