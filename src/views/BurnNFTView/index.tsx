@@ -56,14 +56,12 @@ export const BurnNFTView: FC = ({}) => {
     const userNFTMetadata = await Promise.all(
       userNFTs.map(async (token) => {
         // @ts-ignore
-        if(token.creators[0]?.address.toBase58() =="7aBy7zMY3GF9ZaXJfAbKk16FgCDp3ciA4KXENH9aex5h")
-        {
         const mintPublickey = token.mintAddress;
         const mint = mintPublickey.toBase58();
         let name = token.name.trim();
         let logoURI: string;
         const collectionAddress = token.collection?.address;
-        
+        const creator = token.creators[0]?.address.toBase58();
         let collectionMetadata: string | undefined = undefined;
 
         if (collectionAddress) {
@@ -106,7 +104,7 @@ export const BurnNFTView: FC = ({}) => {
             publickey
           )
         ).toBase58();
-          }
+
         return {
           name,
           logoURI,
@@ -115,7 +113,8 @@ export const BurnNFTView: FC = ({}) => {
           tokenAccount,
           masterEditionPDA,
           collectionMetadata,
-          isMasterEdition
+          isMasterEdition,
+          creator
         };
       })
     );
