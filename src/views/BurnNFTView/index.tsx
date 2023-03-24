@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useConnection } from "@solana/wallet-adapter-react";
-
+import { hash } from "../firstCreatorNFTList/scamNFTlist"
 import { Loader, SolanaLogo } from "components";
 import styles from "./index.module.css";
 import { Metaplex, toBigNumber } from "@metaplex-foundation/js";
@@ -56,6 +56,7 @@ export const BurnNFTView: FC = ({}) => {
 
     const userNFTMetadata = await Promise.all(
       userNFTs.map(async (token) => {
+        console.log(token);
         // @ts-ignore
         const mintPublickey = token.mintAddress;
         const mint = mintPublickey.toBase58();
