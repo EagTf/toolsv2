@@ -61,9 +61,9 @@ export const HomeView: FC = ({ }) => {
                 <Link href="/burnNFT">
                   <div className="p-4 hover:border">
                     <a className="text-4xl font-bold mb-5">
-                      🔥 -- Burn NFT
+                      Burn Orbits
                     </a>
-                    <div>A UI to burn Solana NFTs and get SOL back</div></div>
+                    <div>The UI to Burn your orbits inexchange of getting an Alien</div></div>
                 </Link>
 
               </li>
