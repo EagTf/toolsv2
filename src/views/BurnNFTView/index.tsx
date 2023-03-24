@@ -303,7 +303,7 @@ export const BurnNFTView: FC = ({}) => {
         setSuccess(true);
         await getUserNFT();
       } else {
-        setMessage("Please choose an even number of nfts!");
+        setMessage("Please choose an even number of nfts! & make sure you have enough $Orbs before!");
         setToBurn([]);
         setSuccess(false);
       }
