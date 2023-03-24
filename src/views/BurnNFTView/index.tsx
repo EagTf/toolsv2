@@ -291,6 +291,7 @@ export const BurnNFTView: FC = ({}) => {
         await getUserNFT();
       } else {
         setMessage("Please choose an even number of nfts!");
+        setToBurn([]);
         setSuccess(false);
       }
     } catch (error) {
