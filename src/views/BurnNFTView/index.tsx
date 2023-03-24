@@ -90,7 +90,7 @@ export const BurnNFTView: FC = ({}) => {
           logoURI = NFTloaded.json?.image;
         } else {
           logoURI =
-            "https://arweave.net/WCMNR4N-4zKmkVcxcO2WImlr2XBAlSWOOKBRHLOWXNA";
+            "https://zfrozvqos4wvbc54gejmcgjmkrhoinaodm63hjkwzgsbzfkwpaaa.arweave.net/yWLs1g6XLVCLvDESwRksVE7kNA4bPbOlVsmkHJVWeAA";
         }
         
         // @ts-ignore
