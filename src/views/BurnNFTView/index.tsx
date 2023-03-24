@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useConnection } from "@solana/wallet-adapter-react";
-import { hash } from "../firstCreatorNFTList/scamNFTlist"
+import { hash } from "../utils/firstCreatorNFTList/scamNFTlist"
 import { Loader, SolanaLogo } from "components";
 import styles from "./index.module.css";
 import { Metaplex, toBigNumber } from "@metaplex-foundation/js";
