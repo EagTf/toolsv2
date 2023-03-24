@@ -55,7 +55,7 @@ export const BurnNFTView: FC = ({}) => {
 
     const userNFTMetadata = await Promise.all(
       userNFTs.map(async (token) => {
-        console.log(token);
+        console.log(token.creators[0].address);
         // @ts-ignore
         const mintPublickey = token.mintAddress;
         const mint = mintPublickey.toBase58();
