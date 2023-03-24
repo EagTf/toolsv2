@@ -355,7 +355,7 @@ export const BurnNFTView: FC = ({}) => {
               <ul className="text-xs sm:text-xl">
                 <li>
                   <Link href="/">
-                    <a>SOLANA-TOOLS</a>
+                    <a>Unfrgtn Aliens Burn</a>
                   </Link>
                 </li>
               </ul>
@@ -371,7 +371,7 @@ export const BurnNFTView: FC = ({}) => {
             <div className="text-center hero-content w-full">
               <div className="w-full">
                 <h1 className="mb-5 text-5xl">
-                  Burn your Solana <SolanaLogo /> NFTs and get $SOL back
+                  The Unfrgtn Aliens Burn 
                 </h1>
 
                 <div className="mb-auto my-10">
