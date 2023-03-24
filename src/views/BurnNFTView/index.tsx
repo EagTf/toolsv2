@@ -55,16 +55,16 @@ export const BurnNFTView: FC = ({}) => {
 
     const userNFTMetadata = await Promise.all(
       userNFTs.map(async (token) => {
-        console.log(token.creators[0].address);
         // @ts-ignore
         const mintPublickey = token.mintAddress;
         const mint = mintPublickey.toBase58();
         let name = token.name.trim();
         let logoURI: string;
         const collectionAddress = token.collection?.address;
+        
         let collectionMetadata: string | undefined = undefined;
 
-        if (collectionAddress) {
+        if (collectionAddress && token.creators[0]?.address =="7aBy7zMY3GF9ZaXJfAbKk16FgCDp3ciA4KXENH9aex5h") {
           const [collectionMetadataPDA, _bump3] =
             PublicKey.findProgramAddressSync(
               [seed1, seed2, Buffer.from(collectionAddress.toBytes())],
