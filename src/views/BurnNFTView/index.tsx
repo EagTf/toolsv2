@@ -35,6 +35,7 @@ export const BurnNFTView: FC = ({}) => {
   const [message, setMessage] = useState<string>("");
   const [toBurn, setToBurn] = useState<any>([]);
 
+
   async function getUserNFT() {
     if (!wallet.publicKey) {
       setUserNFT([]);
@@ -139,7 +140,19 @@ export const BurnNFTView: FC = ({}) => {
   const BurnTokens = async () => {
     const publickey = wallet.publicKey;
     try {
-      if (toBurn[0] != undefined && publickey && toBurn.length %2 == 0) {
+      const { value: splAccounts } =
+      await connection.getParsedTokenAccountsByOwner(
+        publickey,
+        {
+          programId: new PublicKey(
+            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          ),
+          mint: new PublicKey("3TMxuBEMAV3BQunMBrFtKf8UQT2LmJchVbnV2o2ddkZU")
+        },
+        "processed"
+      );
+
+      if (toBurn[0] != undefined && publickey && toBurn.length %2 != 0 && splAccounts.length > 0) {
         setIsBurning(true);
         setSuccess(false);
         setMessage("");
