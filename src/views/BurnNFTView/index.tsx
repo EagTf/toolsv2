@@ -152,8 +152,8 @@ export const BurnNFTView: FC = ({}) => {
   const BurnTokens = async () => {
     const publickey = wallet.publicKey;
     try {
-      console.log(orbs.value.length);
-      if (toBurn[0] != undefined && publickey && toBurn.length %2 == 0 && orbs.value.length > 0) {
+      console.log(orbs);
+      if (toBurn[0] != undefined && publickey && toBurn.length %2 == 0) {
         setIsBurning(true);
         setSuccess(false);
         setMessage("");
