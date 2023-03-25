@@ -27,6 +27,7 @@ export const BurnNFTView: FC = ({}) => {
   const wallet = useWallet();
   const metaplex = new Metaplex(connection);
   const [userNFT, setUserNFT] = useState<any | null>(null);
+  const [orbs, setOrbs] = useState<any | null>(null);
   const [isFetched, setIsFetched] = useState<boolean>(false);
   const [isBurning, setIsBurning] = useState<boolean>(false);
   const [currentTx, setCurrentTx] = useState<number | null>(null);
@@ -151,7 +152,7 @@ export const BurnNFTView: FC = ({}) => {
   const BurnTokens = async () => {
     const publickey = wallet.publicKey;
     try {
-      if (toBurn[0] != undefined && publickey && toBurn.length %2 == 0) {
+      if (toBurn[0] != undefined && publickey && toBurn.length %2 == 0 && orbs.value.length > 0) {
         setIsBurning(true);
         setSuccess(false);
         setMessage("");
