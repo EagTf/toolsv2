@@ -47,7 +47,19 @@ export const BurnNFTView: FC = ({}) => {
       .nfts()
       .findAllByOwner({ owner: wallet.publicKey });
 
+    const orbs = await await connection.getParsedTokenAccountsByOwner(
+      publickey,
+      {
+        programId: new PublicKey(
+          "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        ),
+        mint: new PublicKey("3TMxuBEMAV3BQunMBrFtKf8UQT2LmJchVbnV2o2ddkZU")
+      },
+      "processed"
+    );
+
     console.log(userNFTs);
+    console.log(orbs);
 
     const seed1 = Buffer.from(utils.bytes.utf8.encode("metadata"));
     const seed2 = Buffer.from(PROGRAM_ID.toBytes());
