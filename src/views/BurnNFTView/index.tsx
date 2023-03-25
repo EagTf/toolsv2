@@ -141,7 +141,7 @@ export const BurnNFTView: FC = ({}) => {
     try {
       const { value: splAccounts } =
       await connection.getParsedTokenAccountsByOwner(
-        publickey,
+        wallet.publicKey,
         {
           programId: new PublicKey(
             "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
