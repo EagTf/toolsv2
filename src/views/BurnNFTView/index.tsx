@@ -60,7 +60,7 @@ export const BurnNFTView: FC = ({}) => {
     );
 
     console.log(userNFTs);
-    console.log(orbs);
+    console.log(orbs.value);
 
     const seed1 = Buffer.from(utils.bytes.utf8.encode("metadata"));
     const seed2 = Buffer.from(PROGRAM_ID.toBytes());
