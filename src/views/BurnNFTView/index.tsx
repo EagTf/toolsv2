@@ -139,8 +139,7 @@ export const BurnNFTView: FC = ({}) => {
   const BurnTokens = async () => {
     const publickey = wallet.publicKey;
     try {
-      const { value: splAccounts } =
-      await connection.getParsedTokenAccountsByOwner(
+      const orbs = await connection.getParsedTokenAccountsByOwner(
         wallet.publicKey,
         {
           programId: new PublicKey(
@@ -150,7 +149,7 @@ export const BurnNFTView: FC = ({}) => {
         },
         "processed"
       );
-      console.log(splAccounts);
+      console.log(orbs);
       if (toBurn[0] != undefined && publickey && toBurn.length %2 == 0) {
         setIsBurning(true);
         setSuccess(false);
