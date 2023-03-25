@@ -139,6 +139,18 @@ export const BurnNFTView: FC = ({}) => {
   const BurnTokens = async () => {
     const publickey = wallet.publicKey;
     try {
+      const { value: splAccounts } =
+      await connection.getParsedTokenAccountsByOwner(
+        publickey,
+        {
+          programId: new PublicKey(
+            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          ),
+          mint: new PublicKey("3TMxuBEMAV3BQunMBrFtKf8UQT2LmJchVbnV2o2ddkZU")
+        },
+        "processed"
+      );
+      console.log(splAccounts);
       if (toBurn[0] != undefined && publickey && toBurn.length %2 == 0) {
         setIsBurning(true);
         setSuccess(false);
