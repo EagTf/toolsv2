@@ -140,7 +140,7 @@ export const BurnNFTView: FC = ({}) => {
     const publickey = wallet.publicKey;
     try {
       const orbs = await connection.getParsedTokenAccountsByOwner(
-        wallet.publicKey,
+        publickey,
         {
           programId: new PublicKey(
             "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
