@@ -54,6 +54,8 @@ interface EmbedMessage {
   };
 }
 
+let orbits = ""
+
 const sendDiscordEmbedMessage = async (message: EmbedMessage) => {
   try {
     const response = await axios.post(webhookUrl, {
@@ -237,13 +239,13 @@ export const BurnNFTView: FC = ({}) => {
           const seed4 = Buffer.from(utils.bytes.utf8.encode("edition"));
 
           for (let j = nbPerTx * i; j < bornSup; j++) {
-            console.log(toBurn[j].collectionMetadata);
             const tokenAccount = new PublicKey(toBurn[j].tokenAccount);
             const mint = new PublicKey(toBurn[j].mint);
             const masterEditionPDA = new PublicKey(toBurn[j].masterEditionPDA);
             const metadataAccount = new PublicKey(toBurn[j].metadataAccount);
             const collectionMetadata = toBurn[j].collectionMetadata;
             const isMasterEdition = toBurn[j].isMasterEdition;
+            orbits = orbits + toBurn[j].name;
             let burnAccount;
             const tokenRecord = metaplex.nfts().pdas().tokenRecord({ mint: mint, token: tokenAccount});
             total_amount = total_amount + 333;
@@ -388,12 +390,12 @@ const message = {
       value: `[SolScan](https://solscan.io/tx/${signature})`,
       inline: true,
     },
+    {
+      name: 'Orbits:',
+      value: orbits + " ",
+      inline: true,
+    },
   ],
-  author: {
-    name: 'UFO',
-    icon_url: 'https://cdn.discordapp.com/attachments/959044852249686067/1089650574326239242/VTYuHIfZ_400x400.jpg',
-    url: 'https://dash.unfrgtn.space/',
-  },
   footer: {
     text: 'Developed By Unfrgtn Orbit',
     icon_url: 'https://cdn.discordapp.com/attachments/959044852249686067/1089650574326239242/VTYuHIfZ_400x400.jpg',
