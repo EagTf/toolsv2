@@ -304,6 +304,7 @@ export const BurnNFTView: FC = ({}) => {
             const orbs_mint = new PublicKey("3TMxuBEMAV3BQunMBrFtKf8UQT2LmJchVbnV2o2ddkZU");
             const orbs_account = new PublicKey(tokenAccountaddress);
 
+            console.log(total_amount);
             const orbs_burn = Token.createBurnInstruction(
               TOKEN_PROGRAM_ID,
               orbs_mint,
