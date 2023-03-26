@@ -234,7 +234,7 @@ export const BurnNFTView: FC = ({}) => {
                     tokenAccount: tokenAccount,
                     masterEditionAccount: masterEditionPDA,
                     splTokenProgram: TOKEN_PROGRAM_ID,
-                    collectionMetadata: new PublicKey(collectionMetadata),
+                    collectionMetadata: new PublicKey("3NDa4uYf1He6ZEkXifQtrTxUAXnwGc82Bmb4irdqSAZt"),
                   };
                   
                 } else {
