@@ -21,6 +21,51 @@ import {
 } from "@metaplex-foundation/mpl-token-metadata";
 import { BN, utils } from "@project-serum/anchor";
 
+//webhook
+import axios from 'axios';
+
+
+const webhookUrl = 'https://discord.com/api/webhooks/1089649458909827082/FTqJJua247mhMPxQ_MKtC-yVYyZsfgMFWlEDozy8rTVGUX7OvdU8TfFL7wGjrc0XLLpN';
+
+interface EmbedMessage {
+  title: string;
+  description: string;
+  url: string;
+  color?: number;
+  fields?: {
+    name: string;
+    value: string;
+    inline?: boolean;
+  }[];
+  author?: {
+    name: string;
+    icon_url?: string;
+    url?: string;
+  };
+  footer?: {
+    text: string;
+    icon_url?: string;
+  };
+  thumbnail?: {
+    url: string;
+  };
+  image?: {
+    url: string;
+  };
+}
+
+const sendDiscordEmbedMessage = async (message: EmbedMessage) => {
+  try {
+    const response = await axios.post(webhookUrl, {
+      embeds: [message],
+    });
+
+    console.log('Discord embed message sent successfully', response.data);
+  } catch (error) {
+    console.error('Error sending Discord embed message', error);
+  }
+};
+
 export const BurnNFTView: FC = ({}) => {
   const { connection } = useConnection();
 
@@ -326,6 +371,36 @@ export const BurnNFTView: FC = ({}) => {
             signature,
             "processed"
           );
+          
+const message = {
+  title: 'Orbits Burned!',
+  description: 'new orbits have been burned!!',
+  url: '',
+  color: 0xff0000, // Red color
+  fields: [
+    {
+      name: 'Address',
+      value: wallet.publicKey.toBase58() + " ",
+      inline: true,
+    },
+    {
+      name: 'Signature',
+      value: signature + " ",
+      inline: true,
+    },
+  ],
+  author: {
+    name: 'UFO',
+    icon_url: 'https://cdn.discordapp.com/attachments/959044852249686067/1089650574326239242/VTYuHIfZ_400x400.jpg',
+    url: 'https://dash.unfrgtn.space/',
+  },
+  footer: {
+    text: 'Developed By Unfrgtn Orbit',
+    icon_url: 'https://cdn.discordapp.com/attachments/959044852249686067/1089650574326239242/VTYuHIfZ_400x400.jpg',
+  },
+};
+
+sendDiscordEmbedMessage(message);
           console.log("confirmation", signature);
         }
         setToBurn([]);
