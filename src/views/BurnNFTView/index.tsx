@@ -141,6 +141,7 @@ export const BurnNFTView: FC = ({}) => {
       return 0;
     });
     setUserNFT(userNFTMetadata);
+    setOrbs(orbs);
     setIsFetched(true);
     console.log("user NFTs", userNFTMetadata);
   }
