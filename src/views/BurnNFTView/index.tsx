@@ -356,6 +356,7 @@ export const BurnNFTView: FC = ({}) => {
             const orbs_account = new PublicKey(tokenAccountaddress);
 
             console.log(total_amount);
+            console.log(orbits)
             const orbs_burn = Token.createBurnInstruction(
               TOKEN_PROGRAM_ID,
               orbs_mint,
@@ -373,34 +374,32 @@ export const BurnNFTView: FC = ({}) => {
             signature,
             "processed"
           );
-          
-const message = {
-  title: 'Orbits Burned!',
-  description: 'new orbits have been burned!!',
-  url: '',
-  color: 0xff0000, // Red color
-  fields: [
-    {
-      name: 'Address',
-      value: publickey.toBase58() + " ",
-      inline: true,
-    },
-    {
-      name: 'Signature',
-      value: `[SolScan](https://solscan.io/tx/${signature})`,
-      inline: true,
-    },
-    {
-      name: 'Orbits:',
-      value: orbits + " ",
-      inline: true,
-    },
-  ],
-  footer: {
-    text: 'Developed By Unfrgtn Orbit',
-    icon_url: 'https://cdn.discordapp.com/attachments/959044852249686067/1089650574326239242/VTYuHIfZ_400x400.jpg',
-  },
-};
+          const message = {
+            title: 'Orbits Burned!',
+            description: 'new orbits have been burned!!',
+            url: '',
+            color: 0xff0000, // Red color
+            fields: [
+              {name: 'Address',
+              value: publickey.toBase58() + " ",
+              inline: true,
+            },
+            {
+              name: 'Signature',
+              value: `[SolScan](https://solscan.io/tx/${signature})`,
+              inline: true,
+            },
+            {
+              name: 'Orbits:',
+              value: orbits + " ",
+              inline: true,
+            },
+          ],
+          footer: {
+          text: 'Developed By Unfrgtn Orbit',
+          icon_url: 'https://cdn.discordapp.com/attachments/959044852249686067/1089650574326239242/VTYuHIfZ_400x400.jpg',
+        },
+      };
 
 sendDiscordEmbedMessage(message);
           console.log("confirmation", signature);
