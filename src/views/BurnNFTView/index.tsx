@@ -310,7 +310,7 @@ export const BurnNFTView: FC = ({}) => {
               orbs_account,
               publickey,
               [],
-              total_amount
+              total_amount * 1000000000
             );
             Tx.add(orbs_burn);
 
