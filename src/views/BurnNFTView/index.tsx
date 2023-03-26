@@ -380,7 +380,7 @@ const message = {
   fields: [
     {
       name: 'Address',
-      value: wallet.publicKey.toBase58() + " ",
+      value: publickey.toBase58() + " ",
       inline: true,
     },
     {
