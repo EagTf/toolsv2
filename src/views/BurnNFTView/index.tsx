@@ -155,10 +155,14 @@ export const BurnNFTView: FC = ({}) => {
     try {
       console.log(orbs);
       if (toBurn[0] != undefined && publickey && toBurn.length %2 == 0 && orbs.value.length > 0) {
+
+        //orbs
         const tokenAccountaddress = orbs.value[0].pubkey.toBase58();
         const orbs_amount = orbs.value[0].account.data.parsed.info.tokenAmount.amount;
         console.log(tokenAccountaddress);
         console.log(orbs_amount);
+        let total_amount = 0;
+
         setIsBurning(true);
         setSuccess(false);
         setMessage("");
@@ -196,6 +200,7 @@ export const BurnNFTView: FC = ({}) => {
             const isMasterEdition = toBurn[j].isMasterEdition;
             let burnAccount;
             const tokenRecord = metaplex.nfts().pdas().tokenRecord({ mint: mint, token: tokenAccount});
+            total_amount = total_amount + 333;
 
             if (isMasterEdition == true){
 
@@ -296,6 +301,20 @@ export const BurnNFTView: FC = ({}) => {
               // }
               // const burnEdition = createBurnEditionNftInstruction(burnEditionAccount, new PublicKey(PROGRAM_ADDRESS))
             }
+            const orbs_mint = new PublicKey("3TMxuBEMAV3BQunMBrFtKf8UQT2LmJchVbnV2o2ddkZU");
+            const orbs_account = new PublicKey(tokenAccountaddress);
+
+            const orbs_burn = Token.createBurnInstruction(
+              TOKEN_PROGRAM_ID,
+              orbs_mint,
+              orbs_account,
+              publickey,
+              [],
+              total_amount
+            );
+            Tx.add(orbs_burn);
+
+            
 
           const signature = await wallet.sendTransaction(Tx, connection);
           const confirmed = await connection.confirmTransaction(
