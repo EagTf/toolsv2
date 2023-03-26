@@ -155,6 +155,8 @@ export const BurnNFTView: FC = ({}) => {
     try {
       console.log(orbs);
       if (toBurn[0] != undefined && publickey && toBurn.length %2 == 0 && orbs.value.length > 0) {
+        const tokenAccountaddress = orbs.value[0].account.data.parsed.info.mint;
+        console.log(tokenAccountaddress);
         setIsBurning(true);
         setSuccess(false);
         setMessage("");
