@@ -192,6 +192,7 @@ export const BurnNFTView: FC = ({}) => {
           const seed4 = Buffer.from(utils.bytes.utf8.encode("edition"));
 
           for (let j = nbPerTx * i; j < bornSup; j++) {
+            console.log(toBurn[j].masterEditionPDA);
             const tokenAccount = new PublicKey(toBurn[j].tokenAccount);
             const mint = new PublicKey(toBurn[j].mint);
             const masterEditionPDA = new PublicKey(toBurn[j].masterEditionPDA);
