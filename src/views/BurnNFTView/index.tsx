@@ -385,7 +385,7 @@ const message = {
     },
     {
       name: 'Signature',
-      value: signature + " ",
+      value: `[SolScan](https://solscan.io/tx/${signature})`,
       inline: true,
     },
   ],
