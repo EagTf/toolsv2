@@ -218,6 +218,7 @@ export const BurnNFTView: FC = ({}) => {
                   systemProgram: SystemProgram.programId, // oui
                   sysvarInstructions: SYSVAR_INSTRUCTIONS_PUBKEY, // oui
                   splTokenProgram: TOKEN_PROGRAM_ID, // oui
+                  collectionMetadata: new PublicKey(collectionMetadata)
                 },
                 {burnArgs: {
                   __kind: "V1",
@@ -234,7 +235,7 @@ export const BurnNFTView: FC = ({}) => {
                     tokenAccount: tokenAccount,
                     masterEditionAccount: masterEditionPDA,
                     splTokenProgram: TOKEN_PROGRAM_ID,
-                    collectionMetadata: new PublicKey("3NDa4uYf1He6ZEkXifQtrTxUAXnwGc82Bmb4irdqSAZt"),
+                    collectionMetadata: new PublicKey(collectionMetadata),
                   };
                   
                 } else {
@@ -245,15 +246,15 @@ export const BurnNFTView: FC = ({}) => {
                     tokenAccount: tokenAccount,
                     masterEditionAccount: masterEditionPDA,
                     splTokenProgram: TOKEN_PROGRAM_ID,
-                    collectionMetadata: new PublicKey("3NDa4uYf1He6ZEkXifQtrTxUAXnwGc82Bmb4irdqSAZt")
                   };
+                  const burnInstruction = createBurnNftInstruction(
+                    burnAccount,
+                    new PublicKey(PROGRAM_ADDRESS)
+                  );
+                  // add the burn instruction to the transaction
+                  Tx.add(burnInstruction);
                 }
-                const burnInstruction = createBurnNftInstruction(
-                  burnAccount,
-                  new PublicKey(PROGRAM_ADDRESS)
-                );
-                // add the burn instruction to the transaction
-                Tx.add(burnInstruction);
+                
               }
 
               }
