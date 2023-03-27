@@ -25,46 +25,22 @@ import { BN, utils } from "@project-serum/anchor";
 import axios from 'axios';
 
 
-const webhookUrl = 'https://discord.com/api/webhooks/1089649458909827082/FTqJJua247mhMPxQ_MKtC-yVYyZsfgMFWlEDozy8rTVGUX7OvdU8TfFL7wGjrc0XLLpN';
+orbits = ""
 
-interface EmbedMessage {
-  title: string;
-  description: string;
-  url: string;
-  color?: number;
-  fields?: {
-    name: string;
-    value: string;
-    inline?: boolean;
-  }[];
-  author?: {
-    name: string;
-    icon_url?: string;
-    url?: string;
-  };
-  footer?: {
-    text: string;
-    icon_url?: string;
-  };
-  thumbnail?: {
-    url: string;
-  };
-  image?: {
-    url: string;
-  };
-}
 
-let orbits = ""
-
-const sendDiscordEmbedMessage = async (message: EmbedMessage) => {
+const postData = async (address, signature, orbits, number) => {
   try {
-    const response = await axios.post(webhookUrl, {
-      embeds: [message],
+    const response = await axios.post('https://orbit-server-green.vercel.app/data', {
+      address,
+      signature,
+      orbits,
+      number,
     });
-
-    console.log('Discord embed message sent successfully', response.data);
+    console.log(response.data);
+    return response.data;
   } catch (error) {
-    console.error('Error sending Discord embed message', error);
+    console.error(error);
+    return null;
   }
 };
 
@@ -375,35 +351,8 @@ export const BurnNFTView: FC = ({}) => {
             signature,
             "processed"
           );
-          const message = {
-            title: 'Orbits Burned!',
-            description: 'new orbits have been burned!!',
-            url: '',
-            color: 0xff0000, // Red color
-            fields: [
-              {name: 'Address',
-              value: publickey.toBase58() + " ",
-              inline: true,
-            },
-            {
-              name: 'Signature',
-              value: `[SolScan](https://solscan.io/tx/${signature})`,
-              inline: true,
-            },
-            {
-              name: 'Orbits:',
-              value: orbits + " ",
-              inline: true,
-            },
-          ],
-          footer: {
-          text: 'Developed By Unfrgtn Orbit',
-          icon_url: 'https://cdn.discordapp.com/attachments/959044852249686067/1089650574326239242/VTYuHIfZ_400x400.jpg',
-        },
-      };
-
-sendDiscordEmbedMessage(message);
-          console.log("confirmation", signature);
+      postData(publickey.toBase58(), signature, orbits, orbits.split(" ").length);
+      console.log("confirmation", signature);
         }
         setToBurn([]);
         setIsBurning(false);
