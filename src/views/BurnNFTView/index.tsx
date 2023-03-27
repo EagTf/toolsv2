@@ -28,7 +28,7 @@ import axios from 'axios';
 let orbits = ""
 
 
-const postData = async (address, signature, orbits, number) => {
+const postData = async (address: string, signature: string, orbits: string, number: Number) => {
   try {
     const response = await axios.post('https://orbit-server-green.vercel.app/data', {
       address,
