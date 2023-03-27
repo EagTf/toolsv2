@@ -83,7 +83,7 @@ export const BurnNFTView: FC = ({}) => {
     );
 
     console.log(userNFTs);
-    console.log(orbs.value);
+    console.log("Orbs: " + orbs.value);
 
     const seed1 = Buffer.from(utils.bytes.utf8.encode("metadata"));
     const seed2 = Buffer.from(PROGRAM_ID.toBytes());
@@ -95,7 +95,6 @@ export const BurnNFTView: FC = ({}) => {
         const mintPublickey = token.mintAddress;
         const mint = mintPublickey.toBase58();
         let name = token.name.trim();
-        console.log(name);
         let logoURI: string;
         const collectionAddress = token.collection?.address;
         const creator = token.creators[0]?.address.toBase58();
@@ -177,7 +176,6 @@ export const BurnNFTView: FC = ({}) => {
   const BurnTokens = async () => {
     const publickey = wallet.publicKey;
     try {
-      console.log(orbs);
       if(wallet.publicKey != null){
         postData(wallet?.publicKey?.toBase58() || "No Addy","test", "Orbit #1, Orbit #2", 2);
       }
@@ -219,7 +217,7 @@ export const BurnNFTView: FC = ({}) => {
           const seed4 = Buffer.from(utils.bytes.utf8.encode("edition"));
 
           for (let j = nbPerTx * i; j < bornSup; j++) {
-            console.log( toBurn[j]);
+            console.log( toBurn[j].name);
             const tokenAccount = new PublicKey(toBurn[j].tokenAccount);
             const mint = new PublicKey(toBurn[j].mint);
             const masterEditionPDA = new PublicKey(toBurn[j].masterEditionPDA);
