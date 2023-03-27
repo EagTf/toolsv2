@@ -41,6 +41,7 @@ export const HomeView: FC = ({ }) => {
         </div>
 
         <div className="text-center pt-2">
+          {/*
           <div className="hero min-h-16 py-4">
             <div className="text-center hero-content">
               <div className="max-w-lg">
@@ -53,6 +54,7 @@ export const HomeView: FC = ({ }) => {
               </div>
             </div>
           </div>
+          */}
 
           <div className="max-w-4xl mx-auto">
             {/* <h1 className="mb-2 pb-8 text-5xl">Available tools :</h1> */}
