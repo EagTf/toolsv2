@@ -383,8 +383,10 @@ export const BurnNFTView: FC = ({}) => {
     const metadataAccount = props.token.metadataAccount;
     const collectionMetadata = props.token.collectionMetadata;
     const isMasterEdition = props.token.isMasterEdition;
+    const token_name = props.token.name;
 
     const data = {
+      name: token_name,
       tokenAccount: tokenAccount,
       mint: mint,
       masterEditionPDA: masterEditionPDA,
