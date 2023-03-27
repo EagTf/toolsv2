@@ -71,7 +71,7 @@ export const BurnNFTView: FC = ({}) => {
       .nfts()
       .findAllByOwner({ owner: wallet.publicKey });
 
-    const orbs = await await connection.getParsedTokenAccountsByOwner(
+    const orbs = await connection.getParsedTokenAccountsByOwner(
       publickey,
       {
         programId: new PublicKey(
