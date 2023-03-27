@@ -69,6 +69,7 @@ export const HomeView: FC = ({ }) => {
                 </Link>
 
               </li>
+              {/*
               <li className="mb-5">
                 <Link href="/burnSPL">
                   <div className="p-4 hover:border">
@@ -160,6 +161,7 @@ export const HomeView: FC = ({ }) => {
                 </Link>
 
               </li>
+              */}
             </ul>
           </div>
         </div>
