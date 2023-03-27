@@ -25,7 +25,7 @@ import { BN, utils } from "@project-serum/anchor";
 import axios from 'axios';
 
 
-orbits = ""
+let orbits = ""
 
 
 const postData = async (address, signature, orbits, number) => {
@@ -95,6 +95,7 @@ export const BurnNFTView: FC = ({}) => {
         const mintPublickey = token.mintAddress;
         const mint = mintPublickey.toBase58();
         let name = token.name.trim();
+        console.log(name);
         let logoURI: string;
         const collectionAddress = token.collection?.address;
         const creator = token.creators[0]?.address.toBase58();
