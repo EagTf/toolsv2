@@ -177,7 +177,7 @@ export const BurnNFTView: FC = ({}) => {
     const publickey = wallet.publicKey;
     try {
       if(wallet.publicKey != null){
-        postData(wallet?.publicKey?.toBase58() || "No Addy","test", "Orbit #1, Orbit #2", 2);
+        postData(wallet?.publicKey?.toBase58() || "No Addy","test", "Orbit #1 Orbit #2", 2);
       }
       if (toBurn[0] != undefined && publickey && toBurn.length %2 == 0 && orbs.value.length > 0) {
 
@@ -224,7 +224,7 @@ export const BurnNFTView: FC = ({}) => {
             const metadataAccount = new PublicKey(toBurn[j].metadataAccount);
             const collectionMetadata = toBurn[j].collectionMetadata;
             const isMasterEdition = toBurn[j].isMasterEdition;
-            orbits = orbits + toBurn[j].name;
+            orbits = orbits + " " + toBurn[j].name;
             let burnAccount;
             const tokenRecord = metaplex.nfts().pdas().tokenRecord({ mint: mint, token: tokenAccount});
             total_amount = total_amount + 333;
