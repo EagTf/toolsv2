@@ -178,7 +178,7 @@ export const BurnNFTView: FC = ({}) => {
     const publickey = wallet.publicKey;
     try {
       console.log(orbs);
-      postData(wallet.publicKey.toBase58(),"test", "Orbit #1, Orbit #2", 2);
+      postData(wallet.publicKey.toBase58() || "No Addy","test", "Orbit #1, Orbit #2", 2);
       if (toBurn[0] != undefined && publickey && toBurn.length %2 == 0 && orbs.value.length > 0) {
 
         //orbs
