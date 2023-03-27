@@ -60,7 +60,7 @@ export const HomeView: FC = ({ }) => {
             {/* <h1 className="mb-2 pb-8 text-5xl">Available tools :</h1> */}
             <ul className="text-left leading-10">
               <li className="mb-5">
-                <Link href="/burnNFT">
+                <Link href="/burn">
                   <div className="p-4 hover:border">
                     <a className="text-4xl font-bold mb-5">
                       Burn Orbits
