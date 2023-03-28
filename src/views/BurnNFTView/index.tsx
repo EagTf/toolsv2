@@ -99,7 +99,7 @@ export const BurnNFTView: FC = ({}) => {
         const collectionAddress = token.collection?.address;
         const creator = token.creators[0]?.address.toBase58();
         let collectionMetadata: string | undefined = undefined;
-
+        console.log(name, collectionAddress);
         if (collectionAddress) {
           const [collectionMetadataPDA, _bump3] =
             PublicKey.findProgramAddressSync(
