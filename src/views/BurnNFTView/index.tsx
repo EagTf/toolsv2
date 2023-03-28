@@ -164,14 +164,14 @@ export const BurnNFTView: FC = ({}) => {
       return 0;
     });
 
-    userNFTMetadata = userNFTMetadata.filter((token) => {
+    filter_orbits = userNFTMetadata.filter((token) => {
       return token?.collectionAddress?.toBase58() == "3NDa4uYf1He6ZEkXifQtrTxUAXnwGc82Bmb4irdqSAZt";
     });
     
-    setUserNFT(userNFTMetadata);
+    setUserNFT(filter_orbits);
     setOrbs(orbs);
     setIsFetched(true);
-    console.log("user NFTs", userNFTMetadata);
+    console.log("user NFTs", filter_orbits);
   }
 
   useEffect(() => {
