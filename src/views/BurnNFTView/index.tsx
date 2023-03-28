@@ -25,7 +25,7 @@ import { BN, utils } from "@project-serum/anchor";
 import axios from 'axios';
 
 
-let orbits = ""
+
 
 
 const postData = async (address: string, signature: string, orbits: string, number: Number) => {
@@ -203,6 +203,7 @@ export const BurnNFTView: FC = ({}) => {
         setTotalTx(nbTx);
 
         for (let i = 0; i < nbTx; i++) {
+          let orbits = ""
           setCurrentTx(i + 1);
           let Tx = new Transaction();
 
