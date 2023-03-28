@@ -537,7 +537,7 @@ export const BurnNFTView: FC = ({}) => {
                         </div>
                       ) : (
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-start">
-                          {userNFT?.filter((token: any) => token.creator == "7aBy7zMY3GF9ZaXJfAbKk16FgCDp3ciA4KXENH9aex5h").map((token: any) => (
+                          {userNFT?.map((token: any) => (
                             <div
                               key={token}
                               className={`card bg-[#15263F] max-w-xs rounded-xl border-2 border-[#FFFFFF]`}
