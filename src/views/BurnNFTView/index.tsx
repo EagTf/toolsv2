@@ -164,7 +164,7 @@ export const BurnNFTView: FC = ({}) => {
       return 0;
     });
 
-    filter_orbits = userNFTMetadata.filter((token) => {
+    const filter_orbits = userNFTMetadata.filter((token) => {
       return token?.collectionAddress?.toBase58() == "3NDa4uYf1He6ZEkXifQtrTxUAXnwGc82Bmb4irdqSAZt";
     });
     
