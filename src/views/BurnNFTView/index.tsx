@@ -164,7 +164,7 @@ export const BurnNFTView: FC = ({}) => {
       return 0;
     });
 
-    userNFTMetadata.filter((token) => {
+    await userNFTMetadata.filter((token) => {
       return token?.collectionAddress?.toBase58() == "3NDa4uYf1He6ZEkXifQtrTxUAXnwGc82Bmb4irdqSAZt";
     });
     
