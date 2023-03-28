@@ -181,8 +181,8 @@ export const BurnNFTView: FC = ({}) => {
         //orbs
         const tokenAccountaddress = orbs.value[0].pubkey.toBase58();
         const orbs_amount = orbs.value[0].account.data.parsed.info.tokenAmount.amount;
-        console.log(tokenAccountaddress);
         console.log(orbs_amount);
+        if(orbs_amount / 1000000000 >= toBurn.length * 333){
         let total_amount = 0;
 
         setIsBurning(true);
@@ -357,6 +357,11 @@ export const BurnNFTView: FC = ({}) => {
         setIsBurning(false);
         setSuccess(true);
         await getUserNFT();
+      }else{
+        setMessage("You Dont have Enough $Orbs to Burn this amount of Orbits");
+        setToBurn([]);
+        setSuccess(false);
+      }
       } else {
         setMessage("Make sure to select an even number of orbits + have enough $Orbs");
         setToBurn([]);
