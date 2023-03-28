@@ -528,7 +528,7 @@ export const BurnNFTView: FC = ({}) => {
 
                       {!userNFT.length ? (
                         <div className="text-center text-2xl pt-16">
-                          No NFT found in this wallet
+                          No Orbits Found in this wallet
                         </div>
                       ) : (
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-start">
