@@ -25,7 +25,15 @@ import { BN, utils } from "@project-serum/anchor";
 import axios from 'axios';
 
 
-
+const checkApi = async () => {
+  try {
+    const response = await axios.get('https://orbit-server-green.vercel.app/burned');
+    return true;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+};
 
 
 const postData = async (address: string, signature: string, orbits: string, number: Number) => {
@@ -183,6 +191,8 @@ export const BurnNFTView: FC = ({}) => {
     try {
       if (toBurn[0] != undefined && publickey && toBurn.length %2 == 0 && orbs.value.length > 0) {
 
+        const api = await checkApi();
+        if(api){
         //orbs
         const tokenAccountaddress = orbs.value[0].pubkey.toBase58();
         const orbs_amount = orbs.value[0].account.data.parsed.info.tokenAmount.amount;
@@ -368,6 +378,11 @@ export const BurnNFTView: FC = ({}) => {
         setToBurn([]);
         setSuccess(false);
       }
+    }else{
+      setMessage("Burning is Currently Off, please try again later");
+      setToBurn([]);
+      setSuccess(false);
+    }
       } else {
         setMessage("Make sure to select an even number of orbits + have enough $Orbs");
         setToBurn([]);
