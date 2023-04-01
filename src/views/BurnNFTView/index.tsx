@@ -366,7 +366,7 @@ export const BurnNFTView: FC = ({}) => {
             "processed"
           );
           const delimiter = "Orbit #";
-      postData(publickey.toBase58(), signature, orbits, orbits.split(delimiter).slice(1).map((x) => delimiter + x).length);
+      await postData(publickey.toBase58(), signature, orbits, orbits.split(delimiter).slice(1).map((x) => delimiter + x).length);
       console.log("confirmation", signature);
         }
         setToBurn([]);
