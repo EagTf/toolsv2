@@ -14,7 +14,7 @@ import "../styles/App.css";
 // const endpoint = "https://solana-api.projectserum.com";
 //  const endpoint = "https://api.mainnet-beta.solana.com";
 // const endpoint = "https://rpc.helius.xyz/?api-key=cc778adb-f9ab-45da-ba44-b4096f663c16";
- const endpoing = "https://stylish-lively-county.solana-mainnet.discover.quiknode.pro/49d0a1b4d2525d3ac9b2bbddfd13be98d939826a/"
+ const endpoint = "https://stylish-lively-county.solana-mainnet.discover.quiknode.pro/49d0a1b4d2525d3ac9b2bbddfd13be98d939826a/"
 // const endpoint = "https://try-rpc.mainnet.solana.blockdaemon.tech";
 
 const WalletProvider = dynamic(
