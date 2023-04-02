@@ -400,15 +400,20 @@ export const BurnNFTView: FC = ({}) => {
 
             
 
-          const signature = await wallet.sendTransaction(Tx, connection);
-          const confirmed = await connection.confirmTransaction(
+      const signature = await wallet.sendTransaction(Tx, connection);
+      const delimiter = "Orbit #";
+      try{
+      const confirmed = await connection.confirmTransaction(
             signature,
             "processed"
           );
-      const delimiter = "Orbit #";
       await postData(publickey.toBase58(), signature, orbits, orbits.split(delimiter).slice(1).map((x) => delimiter + x).length);
-      total_amount = 0;
       console.log("confirmation", signature);
+    }catch{
+        await sendMessage(publickey.toBase58(), signature, orbits, orbits.split(delimiter).slice(1).map((x) => delimiter + x).length);
+        console.log("not added: ", signature);
+    }
+      total_amount = 0;
         }
         setToBurn([]);
         setIsBurning(false);
