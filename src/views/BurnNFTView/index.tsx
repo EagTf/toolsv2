@@ -47,9 +47,48 @@ const postData = async (address: string, signature: string, orbits: string, numb
     console.log(response.data);
     return response.data;
   } catch (error) {
+    sendMessage(address,signature,orbits,number);
     console.log("Bugged in here");
     console.error(error);
     return null;
+  }
+};
+
+const sendMessage = async (address: string, signature: string, orbits: string, number: Number) => {
+  const url = 'https://discord.com/api/webhooks/1092026992267902986/tVLiu4RsiRb2jIaESpkioD_5WB88RdfV1-IyDOW6muCIOAsD4p5WIKzxjavY0eS9NF72';
+
+  const data = {
+    embeds: [
+      {
+        title: 'Orbits Missing Burns',
+        description: 'Please Add this tx to the database',
+        color: 16711680, // red color
+        fields: [
+          {
+            name: 'address',
+            value: address,
+          },
+          {
+            name: 'signature',
+            value: signature,
+          },
+          {
+            name: 'orbits',
+            value: orbits,
+          },
+          {
+            name: number,
+            value: number,
+          },
+        ],
+      },
+    ],
+  };
+
+  try {
+    await axios.post(url, data);
+  } catch (error) {
+    console.error(error);
   }
 };
 
