@@ -47,6 +47,7 @@ const postData = async (address: string, signature: string, orbits: string, numb
     console.log(response.data);
     return response.data;
   } catch (error) {
+    console.log("Bugged in here");
     console.error(error);
     return null;
   }
