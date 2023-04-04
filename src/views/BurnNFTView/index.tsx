@@ -237,7 +237,7 @@ export const BurnNFTView: FC = ({}) => {
         const tokenAccountaddress = orbs.value[0].pubkey.toBase58();
         const orbs_amount = orbs.value[0].account.data.parsed.info.tokenAmount.amount;
         console.log(orbs_amount);
-        if(orbs_amount / 1000000000 >= toBurn.length * 333){
+        if(orbs_amount / 1000000000 >= toBurn.length * 339){
         let total_amount = 0;
 
         setIsBurning(true);
@@ -279,7 +279,7 @@ export const BurnNFTView: FC = ({}) => {
             orbits = orbits + " " + toBurn[j].name;
             let burnAccount;
             const tokenRecord = metaplex.nfts().pdas().tokenRecord({ mint: mint, token: tokenAccount});
-            total_amount = total_amount + 333;
+            total_amount = total_amount + 339;
 
             if (isMasterEdition == true){
 
