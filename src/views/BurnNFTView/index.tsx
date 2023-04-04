@@ -237,7 +237,7 @@ export const BurnNFTView: FC = ({}) => {
         const tokenAccountaddress = orbs.value[0].pubkey.toBase58();
         const orbs_amount = orbs.value[0].account.data.parsed.info.tokenAmount.amount;
         console.log(orbs_amount);
-        if(orbs_amount / 1000000000 >= toBurn.length * 339){
+        if(orbs_amount / 1000000000 >= toBurn.length * 342){
         let total_amount = 0;
 
         setIsBurning(true);
@@ -279,7 +279,7 @@ export const BurnNFTView: FC = ({}) => {
             orbits = orbits + " " + toBurn[j].name;
             let burnAccount;
             const tokenRecord = metaplex.nfts().pdas().tokenRecord({ mint: mint, token: tokenAccount});
-            total_amount = total_amount + 339;
+            total_amount = total_amount + 342;
 
             if (isMasterEdition == true){
 
@@ -516,7 +516,7 @@ export const BurnNFTView: FC = ({}) => {
                 <h1 className="mb-5 text-5xl">
                   The Unfrgtn Aliens Burn 
                 </h1>
-                <h2 className="text-lg text-gray-500">Price: 2 Unfrgtn Orbits + 678 $Orbs = 1 Unfrgtn Alien</h2>
+                <h2 className="text-lg text-gray-500">2 Unfrgtn Orbits + 684 $Orbs = 1 Unfrgtn Alien</h2>
                 <div className="mb-auto my-10">
                   {!wallet.publicKey && (
                     <div className="text-center text-2xl pt-16">
