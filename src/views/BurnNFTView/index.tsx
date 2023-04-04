@@ -516,7 +516,7 @@ export const BurnNFTView: FC = ({}) => {
                 <h1 className="mb-5 text-5xl">
                   The Unfrgtn Aliens Burn 
                 </h1>
-
+                <h2 className="text-lg text-gray-500">Price: 2 Unfrgtn Orbits + 678 $Orbs = 1 Unfrgtn Alien</h2>
                 <div className="mb-auto my-10">
                   {!wallet.publicKey && (
                     <div className="text-center text-2xl pt-16">
