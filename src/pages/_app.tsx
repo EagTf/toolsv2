@@ -19,7 +19,8 @@ import "../styles/App.css";
 //const endpoint = "https://little-delicate-hill.solana-mainnet.discover.quiknode.pro/65363c55d9e7e8a4bcc1a62ec422400ea0aa7b20/";
 //const endpoint = "https://rpc.ankr.com/solana/69888ad83a2afe04825141afaa54e992ba0016b33aed81f0b7202b072ed97c86";
 //const endpoint = "https://rpc.helius.xyz/?api-key=071df3fc-1b02-413e-8879-fa0b6019ddf6"
-const endpoint = "https://rpc.helius.xyz/?api-key=3bf78fcd-cd24-494b-9031-8232bdd7cf1c"
+//const endpoint = "https://rpc.helius.xyz/?api-key=3bf78fcd-cd24-494b-9031-8232bdd7cf1c"
+const endpoint = "https://solana-mainnet.rpc.extrnode.com"
 
 const WalletProvider = dynamic(
   () => import("../contexts/ClientWalletProvider"),
