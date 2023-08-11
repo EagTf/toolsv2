@@ -20,7 +20,7 @@ import "../styles/App.css";
 //const endpoint = "https://rpc.ankr.com/solana/69888ad83a2afe04825141afaa54e992ba0016b33aed81f0b7202b072ed97c86";
 //const endpoint = "https://rpc.helius.xyz/?api-key=071df3fc-1b02-413e-8879-fa0b6019ddf6"
 //const endpoint = "https://rpc.helius.xyz/?api-key=3bf78fcd-cd24-494b-9031-8232bdd7cf1c"
-const endpoint = "https://rpc.helius.xyz/?api-key=09918bfd-c15f-4b9f-b135-a5a40cfd2ee2"
+const endpoint = "https://rpc.helius.xyz/?api-key=1bf24ff8-eca8-424c-8371-965c1da36381"
 
 const WalletProvider = dynamic(
   () => import("../contexts/ClientWalletProvider"),
